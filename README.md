@@ -2,6 +2,7 @@
 Una aplicación web construida con React, JavaScript, TailwindCSS y FastAPI, diseñada para predecir el precio estimado de dispositivos Samsung a partir de sus especificaciones técnicas como RAM, almacenamiento, batería y cámara.
 
 ✨ Funcionalidades
+
 ✅ Formulario interactivo para ingresar características del dispositivo
 
 ✅ Predicción del precio usando un modelo de machine learning (FastAPI backend)
