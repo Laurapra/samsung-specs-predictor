@@ -10,10 +10,13 @@ import numpy as np
 import re
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Configurar rutas de archivos
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_DIR = BASE_DIR / "model"
+
+load_dotenv()
 
 app = FastAPI(
   title='Samsung Specs Predictor',
@@ -379,8 +382,8 @@ def predict(specs: DeviceSpecs):
     
     # Obtengo dispositivos similares
     similar_devices = [
-      SimilarDevices(**device)
-      for device in get_similar_devices(input_data, predicted_price)
+            SimilarDevices(**device)
+            for device in get_similar_devices(input_data, predicted_price)
     ]
     # Preparar la respuesta
     response = PredictionResponse(

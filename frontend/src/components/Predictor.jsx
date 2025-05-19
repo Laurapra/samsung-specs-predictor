@@ -14,8 +14,11 @@ export default function Predictor() {
 
   const predict = async () => {
   setLoading(true);
+
+  const apiUrl = process.env.REACT_APP_API_URL;  
+
   try {
-    const res = await axios.post('http://127.0.0.1:8000/predict', {
+    const res = await axios.post(`${apiUrl}/predict`, {
       internal_storage: parseFloat(input.storage),
       storage_ram: parseFloat(input.ram),
       battery: parseInt(input.battery),
